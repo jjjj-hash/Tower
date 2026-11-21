@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instagram simulado (testes)</title>
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  main { padding-bottom: 60px; }
+  article { border-bottom: 1px solid #ddd; margin: 0 0 8px; }
+  .hdr { display: flex; gap: 8px; align-items: center; height: 48px; padding: 0 8px; }
+  .media { height: 390px; background: #ccc; display: block; }
+  .actions { height: 40px; }
+  .caption { padding: 8px; }
+  nav { position: fixed; bottom: 0; left: 0; right: 0; height: 50px; display: flex;
+        justify-content: space-around; background: #fff; border-top: 1px solid #ddd; }
+  nav > div { display: flex; align-items: center; }
+  .sugg { padding: 8px; }
+  .sugg .row { display: flex; justify-content: space-between; }
+  .cards { display: flex; gap: 8px; height: 180px; }
+  .card { width: 120px; background: #eee; display: flex; flex-direction: column; justify-content: end; }
+  .tray { height: 100px; display: flex; gap: 8px; }
+  .grid { display: flex; flex-wrap: wrap; }
+  .grid a { width: 33%; height: 130px; background: #bbb; display: block; }
+  .tabs { display: flex; justify-content: space-around; height: 44px; }
+  .story { position: fixed; inset: 0; background: #333; color: #fff; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+  const nav = `
+    <nav>
+      <div><a href="/" aria-label="Página inicial">⌂</a></div>
+      <div><a href="/explore/" aria-label="Pesquisar e explorar">⌕</a></div>
+      <div id="nav-reels-wrap"><a href="/reels/" id="nav-reels"><svg aria-label="Reels" width="20" height="20"></svg></a></div>
+      <div><a href="/direct/inbox/" id="nav-dm">✉</a></div>
+      <div><a href="/joao/" id="nav-profile">☺</a></div>
+    </nav>`;
+
+  function post(id, user, headerExtra, link, extra = '', caption = 'Uma legenda qualquer') {
+    return `
+      <article id="${id}">
+        <div class="hdr"><a href="/${user}/">${user}</a>${headerExtra}</div>
+        <a href="${link}" class="media">${extra}</a>
+        <div class="actions"></div>
+        <div class="caption">${caption}</div>
+      </article>`;
+  }
+
+  const routes = {
+    home() {
+      return `
+        <main>
+          <div class="tray" id="tray"><a href="/stories/amigo1/1/">amigo1</a><a href="/stories/amigo2/1/">amigo2</a></div>
+          ${post('normal', 'amigo1', '<span>• 2 h</span>', '/p/AAA/')}
+          ${post('caption-words', 'amigo3', '<span>• 5 h</span>', '/p/CCC/', '',
+            'Este passeio foi patrocinado pela câmara. Vou seguir viagem amanhã.<div role="button">Seguir</div>')}
+          ${post('ad', 'marca', '<span>Patrocinado</span>', '/p/AD1/')}
+          ${post('ad-split', 'marca2', '<span><span>Patro</span><span>cinado</span></span>', '/p/AD2/')}
+          ${post('suggested', 'desconhecido', '<span>•</span><div role="button">Seguir</div>', '/p/SUG/')}
+          ${post('reel', 'amigo2', '<span>• 1 d</span>', '/reel/RRR/', '', '<a href="/reels/audio/123/">Áudio original</a>')}
+          <div class="sugg" id="sugg-section">
+            <div class="row"><span>Sugestões para ti</span><a href="/explore/people/">Ver tudo</a></div>
+            <div class="cards">
+              <div class="card"><a href="/x1/">x1</a><button>Seguir</button></div>
+              <div class="card"><a href="/x2/">x2</a><button>Seguir</button></div>
+            </div>
+          </div>
+          ${post('video-post', 'amigo4', '<span>• 3 d</span>', '/p/VID/', '<video></video>')}
+          ${post('reel-abs', 'amigo5', '<span>• 4 d</span>', 'https://www.instagram.com/reel/XYZ/')}
+        </main>${nav}`;
+    },
+    explore() {
+      let tiles = '';
+      for (let i = 1; i <= 9; i++) tiles += `<a href="/p/E${i}/"></a>`;
+      return `
+        <main>
+          <div class="searchbar"><input id="search" placeholder="Pesquisar"></div>
+          <div id="grid-wrap"><div class="grid" id="grid">${tiles}</div></div>
+        </main>${nav}`;
+    },
+    direct() {
+      return `
+        <main>
+          <div class="thread">
+            <div class="msg">Olha isto!</div>
+            ${post('dm-reel', 'amigo2', '<span></span>', '/reel/DMR/')}
+          </div>
+        </main>`;
+    },
+    profile() {
+      return `
+        <main>
+          <header style="height:150px">joao · 100 publicações</header>
+          <div class="hdr"><div role="button">Seguir</div></div>
+          <div class="sugg" id="profile-sugg">
+            <div class="row"><span>Sugestões para ti</span><a href="/explore/people/">Ver tudo</a></div>
+            <div class="cards"><div class="card"><a href="/y1/">y1</a><button>Seguir</button></div></div>
+          </div>
+          <div class="tabs" role="tablist">
+            <a href="/joao/" id="tab-posts">Publicações</a>
+            <a href="/joao/reels/" id="tab-reels">Reels</a>
+            <a href="/joao/tagged/" id="tab-tagged">Identificado</a>
+          </div>
+          ${post('profile-post', 'joao', '<div role="button">Seguir</div>', '/p/JJJ/')}
+        </main>${nav}`;
+    },
+    story() {
+      return `
+        <div class="story" id="story">
+          <div class="hdr"><a href="/marca/">marca</a><span id="story-label">Patrocinado</span></div>
+          <video id="story-video"></video>
+        </div>`;
+    },
+    reels() {
+      return `<main id="reels-feed">${post('reels-item', 'alguem', '', '/reels/QQQ/')}</main>`;
+    },
+  };
+
+  function render() {
+    const p = location.pathname;
+    let html;
+    if (p === '/') html = routes.home();
+    else if (p.startsWith('/explore')) html = routes.explore();
+    else if (p.startsWith('/direct')) html = routes.direct();
+    else if (p.startsWith('/stories/')) html = routes.story();
+    else if (p.startsWith('/reels') || p.startsWith('/reel/')) html = routes.reels();
+    else html = routes.profile();
+    document.getElementById('app').innerHTML = html;
+  }
+
+  // Navegação sem recarregar (como o Instagram faz).
+  window.mockNavigate = (path) => { history.pushState({}, '', path); render(); };
+  window.mockNextStory = () => { document.getElementById('story-label').textContent = 'amigo1'; };
+  window.mockLateAd = () => {
+    const main = document.querySelector('main');
+    main.insertAdjacentHTML('beforeend', post('late-ad', 'marca3', '<span>Sponsored</span>', '/p/LATE/'));
+  };
+
+  render();
+</script>
+</body>
+</html>
