@@ -48,6 +48,10 @@ vendo só as contas que segues. Uso privado.
 
 ### 3. Pôr o ficheiro `instagram-limpo.user.js` nessa pasta
 Escolhe uma das formas:
+- **Por link (o repositório é público):** no Safari do iPhone abre
+  `https://raw.githubusercontent.com/jjjj-hash/Tower/claude/instagram-app-no-reels-bumr83/instagram-limpo.user.js`.
+  Com a extensão já ativa (passo 4), abre o menu das extensões → **Userscripts**, e deve aparecer a opção de instalar o script.
+  Se não aparecer, usa uma das formas abaixo.
 - **Pela conversa com o Claude:** abre o ficheiro `instagram-limpo.user.js` que te enviei, toca em
   partilhar → **Guardar em Ficheiros** → escolhe a pasta do passo 2.
 - **Pelo GitHub:** abre o ficheiro no repositório, no Safari. Mantém o dedo no botão **Raw** →
