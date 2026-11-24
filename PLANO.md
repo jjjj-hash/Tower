@@ -1,6 +1,7 @@
 # Instagram Limpo — plano (uso pessoal)
 
-Estado: **filtro v0.1.0 feito e testado num Instagram simulado (36/36 testes). Falta o teste no iPhone real.**
+Estado: **filtro v0.1.0 instalado e a funcionar no Safari do iPhone.** O modo Web App (ecrã inteiro) não corre
+extensões, por isso se escolheu o ícone a abrir no Safari. Falta acompanhar uns dias para ver o que escapa ao filtro.
 
 ## Objetivo
 Usar o Instagram no iPhone sem Reels, sem publicidade, sem sugestões e sem Explorar,
@@ -40,6 +41,6 @@ vendo só as contas que sigo. Uso privado, não é para distribuir.
 1. ~~Escrever `instagram-limpo.user.js`~~ (feito)
 2. ~~Testes automáticos num Instagram simulado~~ (feito: `node test/run-tests.js`)
 3. ~~README com as instruções para o iPhone~~ (feito)
-4. Teste no iPhone real: instalar, confirmar o aviso "Filtro ativo" no Safari e depois no modo ecrã inteiro.
+4. ~~Teste no iPhone real~~ (funciona no Safari; no modo Web App não funciona; escolhido o ícone a abrir no Safari)
 5. Ajustar o filtro a partir das capturas de ecrã do que escapar.
-6. Decidir se o repositório fica público ou passa a privado.
+6. ~~Repositório público ou privado~~ (decidido: público)
