@@ -1,7 +1,9 @@
 # Instagram Limpo — plano (uso pessoal)
 
-Estado: **filtro v0.1.0 instalado e a funcionar no Safari do iPhone.** O modo Web App (ecrã inteiro) não corre
-extensões, por isso se escolheu o ícone a abrir no Safari. Falta acompanhar uns dias para ver o que escapa ao filtro.
+Estado: **filtro v0.1.0 instalado e a funcionar no iPhone.** O modo Web App (ecrã inteiro) não corre extensões.
+O browser predefinido é o Brave, por isso o ícone do ecrã principal é um atalho (app Atalhos → "Abrir URL"
+`x-safari-https://www.instagram.com/?variant=following`) que obriga a abrir no Safari. Está testado e funciona.
+Falta acompanhar uns dias para ver o que escapa ao filtro.
 
 ## Objetivo
 Usar o Instagram no iPhone sem Reels, sem publicidade, sem sugestões e sem Explorar,

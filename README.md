@@ -111,8 +111,11 @@ O ícone criado sem "Web App" abre no **browser predefinido**. O filtro só corr
 Tens duas soluções:
 - **Manter o outro browser como predefinido:** na app **Atalhos** cria um atalho com a ação **Abrir URL** e o endereço
   `x-safari-https://www.instagram.com/?variant=following` (o `x-safari-` obriga a abrir no Safari). Depois adiciona
-  o atalho ao ecrã principal. Atenção: este truque não é documentado pela Apple. Há relatos de que funciona no
-  iOS 15, 17 e 18, mas pode deixar de funcionar numa atualização.
+  o atalho ao ecrã principal. **Testado e a funcionar no iPhone do dono deste repositório, com o Brave como browser
+  predefinido.** Atenção: este truque não é documentado pela Apple e pode deixar de funcionar numa atualização do iOS.
+  Se isso acontecer, usa a opção abaixo.
+  Cuidado ao montar o atalho: o endereço vai **dentro** da ação "Abrir URL" (toca na palavra "URL" a azul).
+  Não o ponhas numa ação "URL" separada por baixo, porque aí aparece o erro "Certifique-se de que passa um URL válido".
 - **Pôr o Safari como browser predefinido:** **Definições → Apps → Apps predefinidas → Browser → Safari**.
   Funciona de certeza, mas todos os links passam a abrir no Safari.
 
@@ -146,7 +149,9 @@ O Instagram muda o site com frequência, por isso algumas vezes por ano o filtro
 Quando vires um Reel, um anúncio ou uma sugestão que devia estar escondido:
 1. Tira uma **captura de ecrã**.
 2. Diz-me **onde** estavas (feed, perfil, stories, mensagens) e **o que** escapou.
-3. Eu ajusto o filtro e substituis o ficheiro na pasta da Userscripts.
+3. Eu ajusto o filtro e publico uma versão nova.
+4. Para atualizar, repete a instalação por link (passo 3): abre o link no Safari → menu da Userscripts → instalar.
+   A atualização não é automática.
 
 ## Limites conhecidos
 
