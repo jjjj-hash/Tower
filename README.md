@@ -87,8 +87,9 @@ Se o aviso não aparecer, ainda não está a funcionar. Revê os passos 3 e 4 ou
 
 ## Ícone no ecrã principal (teste do ecrã inteiro)
 
-Não está confirmado que as extensões do Safari funcionam quando o site abre como "Web App" (ecrã inteiro).
-Por isso é preciso testar.
+**Testado:** o filtro funciona no Safari, mas **não funciona** no ícone em modo "Web App" (ecrã inteiro).
+O iPhone não corre extensões nesse modo. Usa o ícone a abrir no Safari, como explicado abaixo.
+Ao fazeres scroll, a barra do Safari encolhe, por isso o ecrã fica quase todo para o Instagram.
 
 ### Se tens iOS 26
 1. No Safari, em instagram.com: **Partilhar → Adicionar ao ecrã principal**.
