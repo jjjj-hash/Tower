@@ -106,6 +106,16 @@ Ao fazeres scroll, a barra do Safari encolhe, por isso o ecrã fica quase todo p
    **+** → **Adicionar ação** → **Abrir URL** → `https://www.instagram.com/?variant=following`
    → toca no nome do atalho → **Adicionar ao ecrã principal**. O ícone abre o Instagram no Safari, já com o filtro.
 
+### Se o teu browser predefinido não é o Safari (ex.: Brave, Chrome)
+O ícone criado sem "Web App" abre no **browser predefinido**. O filtro só corre no Safari.
+Tens duas soluções:
+- **Manter o outro browser como predefinido:** na app **Atalhos** cria um atalho com a ação **Abrir URL** e o endereço
+  `x-safari-https://www.instagram.com/?variant=following` (o `x-safari-` obriga a abrir no Safari). Depois adiciona
+  o atalho ao ecrã principal. Atenção: este truque não é documentado pela Apple. Há relatos de que funciona no
+  iOS 15, 17 e 18, mas pode deixar de funcionar numa atualização.
+- **Pôr o Safari como browser predefinido:** **Definições → Apps → Apps predefinidas → Browser → Safari**.
+  Funciona de certeza, mas todos os links passam a abrir no Safari.
+
 ### A app oficial do Instagram
 Se a app oficial estiver instalada, alguns links (incluindo o atalho) podem abri-la em vez do Safari, e lá os Reels
 e a publicidade continuam todos. Se queres mesmo largar os Reels, o mais eficaz é **apagar a app oficial**.
