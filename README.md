@@ -41,17 +41,24 @@ vendo só as contas que segues. Uso privado.
 1. Abre a App Store e procura **Userscripts** (programador: Justin Wasack). É gratuita.
 2. Instala-a.
 
-### 2. Escolher a pasta dos filtros
+### 2. Abrir a app uma vez
 1. Abre a app **Userscripts**.
-2. Toca na opção para escolher ou mudar a pasta dos scripts.
-3. Escolhe ou cria uma pasta, por exemplo **iCloud Drive → Userscripts** ou **No meu iPhone → Userscripts**.
+2. Nas versões recentes, a pasta dos scripts é escolhida automaticamente e não precisas de mudar nada.
+   Se a app pedir uma pasta, escolhe ou cria uma, por exemplo **No meu iPhone → Userscripts**.
+   Se escolheres uma pasta do iCloud, ativa "Manter descarregado" nessa pasta para o iPhone não apagar o ficheiro.
 
 ### 3. Pôr o ficheiro `instagram-limpo.user.js` nessa pasta
 Escolhe uma das formas:
-- **Por link (o repositório é público):** no Safari do iPhone abre
-  `https://raw.githubusercontent.com/jjjj-hash/Tower/claude/instagram-app-no-reels-bumr83/instagram-limpo.user.js`.
-  Com a extensão já ativa (passo 4), abre o menu das extensões → **Userscripts**, e deve aparecer a opção de instalar o script.
-  Se não aparecer, usa uma das formas abaixo.
+- **Por link (o repositório é público):**
+  1. Ativa primeiro a extensão (passo 4, pontos 1 e 2).
+  2. No Safari do iPhone abre
+     `https://raw.githubusercontent.com/jjjj-hash/Tower/claude/instagram-app-no-reels-bumr83/instagram-limpo.user.js`.
+     Vais ver uma página cheia de código. É normal.
+  3. Abre o menu da página (o botão **"aA"**, ou o botão de menu à esquerda do endereço nas versões mais recentes)
+     → **Userscripts**. Se o Safari pedir autorização para este site, escolhe **Permitir durante um dia**:
+     a extensão precisa de acesso a esta página para ler o script.
+  4. No menu da Userscripts aparece um aviso de instalação. Toca nele e confirma.
+  5. Se o aviso não aparecer, usa uma das formas abaixo.
 - **Pela conversa com o Claude:** abre o ficheiro `instagram-limpo.user.js` que te enviei, toca em
   partilhar → **Guardar em Ficheiros** → escolhe a pasta do passo 2.
 - **Pelo GitHub:** abre o ficheiro no repositório, no Safari. Mantém o dedo no botão **Raw** →
@@ -62,9 +69,12 @@ Confirma que o nome termina em **`.user.js`** (e não em `.txt`).
 ### 4. Ativar a extensão no Safari, só para o Instagram
 1. **Definições → Apps → Safari → Extensões** (em versões mais antigas: **Definições → Safari → Extensões**).
 2. Ativa a **Userscripts**.
-3. Em **Outros sites** escolhe **Negar** (ou **Perguntar**).
-4. Abre o Safari, vai a **instagram.com** e abre o menu da página (o botão **"aA"** ou **"…"** ao lado do endereço,
-   conforme a versão) → **Userscripts** → **Permitir sempre neste site**.
+3. Em **Outros sites** escolhe **Perguntar**. Assim dás autorização site a site.
+   Se instalaste o script pelo link, a autorização do GitHub foi só por um dia e acaba sozinha.
+4. Abre o Safari, vai a **instagram.com** e abre o menu da página (o botão **"aA"**, ou o botão de menu à esquerda
+   do endereço, conforme a versão) → **Userscripts** → **Permitir sempre neste site**.
+5. Abre o menu da **Userscripts** uma vez nesta página. Deve aparecer o **Instagram Limpo** na lista, ativado.
+   A extensão só reconhece scripts novos depois de abrires este menu pelo menos uma vez.
 
 ### 5. Testar no Safari
 1. Em **instagram.com**, inicia sessão normalmente.
